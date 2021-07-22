@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using MelonLoader;
@@ -105,6 +105,12 @@ namespace ModManager
             if (Input.GetKeyDown(KeyCode.F10)&&(Input.GetKey(KeyCode.LeftControl)||Input.GetKey(KeyCode.RightControl)))
             {
                 _isGUIOpen = !_isGUIOpen;
+                _melonMod = null;
+            }
+
+            if (Input.GetKeyDown(KeyCode.Escape) && _isGUIOpen)
+            {
+                _isGUIOpen = false;
                 _melonMod = null;
             }
         }
@@ -215,6 +221,7 @@ namespace ModManager
                 {
                     _melonMod = mod;
                     foreach (var type in _melonMod.Assembly.GetTypes()) if (type == _melonMod.Info.SystemType) _choseType = type;
+                    if (!modToggle.ContainsKey(_melonMod.Info.Name)) modToggle[_melonMod.Info.Name] = (int)Status.Online;
                 }
             }
             
