@@ -84,9 +84,10 @@ namespace ModManager
             {
                 try
                 {
-                    if (!modToggle.ContainsKey(mod.Info.Name)) continue;
+                    if (!modToggle.ContainsKey(mod.Info.Name)) modToggle[mod.Info.Name] = (int) Status.Online;
                     if (modToggle[mod.Info.Name] == (int) Status.Online)
                         foreach (var type in mod.Assembly.GetTypes())
+                            
                             if (type == mod.Info.SystemType)
                                 if (type.GetMethod("OnToggle") == null) modToggle[mod.Info.Name] = (int) Status.Warning;
                                 else type.GetMethod("OnToggle")?.Invoke(null, new object[] {true});
@@ -255,10 +256,10 @@ namespace ModManager
             if(_melonMod.Info.DownloadLink!=null) info += $"Link - {_melonMod.Info.DownloadLink}\n";
             if(_choseType.GetField("Description")!=null) info+=$"Description - {_choseType.GetField("Description").GetValue(null)}\n";
             if(_choseType.GetMethod("OnToggle")==null) info += $"{_melonMod.Info.Name} is not compatible with the Manager";
+            GUILayout.Label(info.Trim(), _textStyle2);
 
             if (_choseType.GetMethod("OnSettingGUI") != null)
             {
-                GUILayout.Label(info.Trim(), _textStyle2);
                 GUILayout.BeginHorizontal();
                 if (GUILayout.Button($"{(_isSettingOpen ? "<size=40>◢</size>" : "<size=30>▶</size>")}", _buttonStyle3))
                     _isSettingOpen = !_isSettingOpen;
