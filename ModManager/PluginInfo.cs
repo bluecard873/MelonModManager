@@ -1,5 +1,5 @@
 ﻿using MelonLoader;
-using Main = ModManager.Main;
+using Main = MelonModManager.Main;
 
 #region Assembly attributes
 

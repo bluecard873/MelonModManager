@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace ModManager
+namespace MelonModManager
 {
     public static class WindowColor
     {

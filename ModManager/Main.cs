@@ -5,7 +5,7 @@ using MelonLoader;
 using SimpleJSON;
 using UnityEngine;
 
-namespace ModManager
+namespace MelonModManager
 {
     public class Main : MelonPlugin
     {
