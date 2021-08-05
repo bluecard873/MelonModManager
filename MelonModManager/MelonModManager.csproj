@@ -64,7 +64,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\Function.cs" />
+    <Compile Include="MelonModManagerSettings.cs" />
     <Compile Include="Core\ModWindow.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="MAIN.cs" />
     <Compile Include="MelonModManager.cs" />
     <Compile Include="PluginInfo.cs" />
@@ -72,6 +74,8 @@
     <Compile Include="Core\SimpleJSON.cs" />
     <Compile Include="Core\Status.cs" />
     <Compile Include="Core\WindowColor.cs" />
+    <Compile Include="Util\KeyCombo.cs" />
+    <Compile Include="Util\SafePatch.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

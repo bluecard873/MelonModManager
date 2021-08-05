@@ -76,7 +76,6 @@ namespace MelonModManager
         
         public override void OnApplicationLateStart() 
         {
-            
             //OnToggle 가능한 모드들만 실행
             foreach (var mod in MelonHandler.Mods)
             {
@@ -96,7 +95,6 @@ namespace MelonModManager
                     modToggle[mod.Info.Name] = (int) Status.Error;
                 }
             }
-            
         }
 
         public override void OnUpdate()
@@ -125,7 +123,7 @@ namespace MelonModManager
                     15, WindowColor.ModInfoLayout);
                 _texture2 = Function.makeRectangle(4, 160 / 7, 90, 1,
                     15, WindowColor.ModListLayout);
-                _texture3 =  Function.makeTex(1, 1, WindowColor.Translucent);
+                _texture3 = Function.makeTex(1, 1, WindowColor.Translucent);
                 _texture4 = Function.makeTex(1, 1, WindowColor.Invisible);
                 _texture5 = Function.makeRectangle(4, 160, 90, 1,
                     10, WindowColor.ButtonColor);
