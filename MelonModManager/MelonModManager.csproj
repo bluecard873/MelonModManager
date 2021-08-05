@@ -64,6 +64,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\Function.cs" />
+    <Compile Include="Core\ModWindow.cs" />
+    <Compile Include="MAIN.cs" />
     <Compile Include="MelonModManager.cs" />
     <Compile Include="PluginInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

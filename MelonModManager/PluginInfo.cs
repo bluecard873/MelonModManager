@@ -2,7 +2,7 @@
 
 #region Assembly attributes
 
-[assembly: MelonInfo(typeof(MelonModManager.MelonModManager), PluginInfo.Name, PluginInfo.Version, PluginInfo.Author, PluginInfo.DownloadLink)]
+[assembly: MelonInfo(typeof(MelonModManager.MAIN), PluginInfo.Name, PluginInfo.Version, PluginInfo.Author, PluginInfo.DownloadLink)]
 [assembly: MelonColor()]
 [assembly: MelonGame(null, null)]
 
