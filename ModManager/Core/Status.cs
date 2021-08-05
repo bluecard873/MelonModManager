@@ -1,4 +1,4 @@
-﻿namespace ModManager
+﻿namespace MelonModManager.Core
 {
     public enum Status
     {

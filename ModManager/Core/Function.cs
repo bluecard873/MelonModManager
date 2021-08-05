@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace ModManager
+namespace MelonModManager.Core
 {
     public static class Function
     {

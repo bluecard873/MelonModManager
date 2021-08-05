@@ -1,9 +1,8 @@
 ﻿using MelonLoader;
-using Main = ModManager.Main;
 
 #region Assembly attributes
 
-[assembly: MelonInfo(typeof(Main), PluginInfo.Name, PluginInfo.Version, PluginInfo.Author, PluginInfo.DownloadLink)]
+[assembly: MelonInfo(typeof(MelonModManager.MelonModManager), PluginInfo.Name, PluginInfo.Version, PluginInfo.Author, PluginInfo.DownloadLink)]
 [assembly: MelonColor()]
 [assembly: MelonGame(null, null)]
 
