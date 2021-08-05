@@ -4,14 +4,12 @@ using System.IO;
 using MelonLoader;
 using SimpleJSON;
 using UnityEngine;
+using MelonModManager.Core;
 
 namespace MelonModManager
 {
-    public class Main : MelonPlugin
+    public class MelonModManager : MelonPlugin
     {
-        
-        //미래의 나를 위한 주석
-        
         private bool _isGUIOpen = false,
             _isSettingOpen = false;
         
@@ -21,10 +19,10 @@ namespace MelonModManager
         private Dictionary<string, int> modToggle = new Dictionary<string, int>();
         private Dictionary<int, string> Status2Color = new Dictionary<int, string>
         {
-            {(int)Status.Online,WindowColor.OnlineText},
-            {(int)Status.Offline,WindowColor.OfflineText},
-            {(int)Status.Warning,WindowColor.WarningText},
-            {(int)Status.Error,WindowColor.ErrorText}
+            { (int)Status.Online, WindowColor.OnlineText },
+            { (int)Status.Offline, WindowColor.OfflineText },
+            { (int)Status.Warning, WindowColor.WarningText },
+            { (int)Status.Error, WindowColor.ErrorText }
         };
         
         private GUIStyle _titleStyle,
