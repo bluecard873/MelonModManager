@@ -63,18 +63,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\Function.cs" />
+    <Compile Include="Util\Attributes\SafePatchAttribute.cs" />
+    <Compile Include="Core\CanvasDrawer.cs" />
+    <Compile Include="Core\ModStatus.cs" />
+    <Compile Include="Core\ModWindowStyles.cs" />
     <Compile Include="MelonModManagerSettings.cs" />
     <Compile Include="Core\ModWindow.cs" />
     <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="MAIN.cs" />
+    <Compile Include="Core\Old\MAIN.cs" />
     <Compile Include="MelonModManager.cs" />
     <Compile Include="PluginInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Core\SimpleJSON.cs" />
-    <Compile Include="Core\Status.cs" />
-    <Compile Include="Core\WindowColor.cs" />
+    <Compile Include="Core\Old\SimpleJSON.cs" />
+    <Compile Include="Core\Old\Status.cs" />
+    <Compile Include="Core\Old\WindowColor.cs" />
     <Compile Include="Util\KeyCombo.cs" />
+    <Compile Include="Util\ReflectionExtensions.cs" />
     <Compile Include="Util\SafePatch.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

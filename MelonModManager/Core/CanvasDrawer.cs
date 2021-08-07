@@ -2,9 +2,19 @@
 
 namespace MelonModManager.Core
 {
-    public static class Function
+    /// <summary>
+    /// .
+    /// </summary>
+    public static class CanvasDrawer
     {
-        public static Texture2D makeTex(int width, int height, Color col)
+        /// <summary>
+        /// Make Color to Texture2D.
+        /// </summary>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
+        /// <param name="col"></param>
+        /// <returns></returns>
+        public static Texture2D MakeTexture(int width, int height, Color col)
         {
             Color[] pix = new Color[width * height];
             for (int i = 0; i < pix.Length; ++i) pix[i] = col;
@@ -14,8 +24,17 @@ namespace MelonModManager.Core
             return result;
         }
 
-
-        public static Texture2D makeRectangle(int resolutionmultiplier, int width, int height, int borderThickness,
+        /// <summary>
+        /// Make Color to Round Rectangle Texture2D.
+        /// </summary>
+        /// <param name="resolutionmultiplier"></param>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
+        /// <param name="borderThickness"></param>
+        /// <param name="borderRadius"></param>
+        /// <param name="borderColor"></param>
+        /// <returns></returns>
+        public static Texture2D MakeRoundRectangle(int resolutionmultiplier, int width, int height, int borderThickness,
             int borderRadius, Color borderColor)
         {
 
@@ -38,6 +57,17 @@ namespace MelonModManager.Core
             return texture;
         }
 
+        /// <summary>
+        /// Find out what color is used at this position.
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
+        /// <param name="borderThickness"></param>
+        /// <param name="borderRadius"></param>
+        /// <param name="borderColor"></param>
+        /// <returns></returns>
         private static Color ColorBorder(int x, int y, int width, int height, int borderThickness, int borderRadius,
             Color borderColor)
         {

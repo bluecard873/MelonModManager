@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MelonLoader;
+using MelonModManager.Util.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,10 +20,23 @@ namespace MelonModManager.Core
             get => instance;
         }
 
-        private Rect windowRect = new Rect();
+        /// <summary>
+        /// Whether the player is writing in internal UI.
+        /// </summary>
+        public bool IsWriting { get; private set; }
+
+        /// <summary>
+        /// Window's container.
+        /// </summary>
+        private Rect WindowRect = new Rect();
+
+        /// <summary>
+        /// Currently selected mod.
+        /// </summary>
+        private MelonMod SelectedMod;
 
         private void Awake() {
-            if (instance != null) {
+            if (instance) {
                 Destroy(gameObject);
                 return;
             }
@@ -30,18 +45,14 @@ namespace MelonModManager.Core
             DontDestroyOnLoad(gameObject);
 
             // Set window size
-            windowRect.width = (float) (Screen.width / 1.4);
-            windowRect.height = (float) (Screen.height / 1.4);
-            windowRect.x = Screen.width / 2 - windowRect.width / 2;
-            windowRect.y = Screen.height / 2 - windowRect.height / 2;  
+            WindowRect.width = (float) (Screen.width / 1.4);
+            WindowRect.height = (float) (Screen.height / 1.4);
+            WindowRect.x = Screen.width / 2 - WindowRect.width / 2;
+            WindowRect.y = Screen.height / 2 - WindowRect.height / 2;  
         }
 
         private void Update() {
-            
-        }
-
-        private void OnGUI() {
-            
+            // TODO: Write code to display the mod window
         }
     }
 }

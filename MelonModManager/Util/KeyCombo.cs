@@ -21,7 +21,7 @@ namespace MelonModManager.Util {
         public static bool AltPressed => Input.GetKey(KeyCode.LeftAlt) || Input.GetKey(KeyCode.RightAlt);
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="KeyCombo"/> class..
+        /// Initializes a new instance of the <see cref="KeyCombo"/> class.
         /// </summary>
         /// <param name="keyCode">Keycode to check.</param>
         /// <param name="ctrl">Whether pressing ctrl key is required.</param>
