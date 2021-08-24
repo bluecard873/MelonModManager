@@ -1,1 +1,8 @@
-.vs/
+.idea
+.vs
+
+MelonModManager/obj/
+MelonModManager/bin/
+
+*.zip
+*.dll
