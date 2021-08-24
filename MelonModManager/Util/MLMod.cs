@@ -16,10 +16,6 @@ namespace MelonModManager.Util
             }
         }
 
-        public override void OnApplicationStart()
-        {
-            HarmonyInstance.UnpatchAll();
-        }
 
         public virtual void OnToggle(bool result) { }
         public virtual void OnSettingGUI() { }
