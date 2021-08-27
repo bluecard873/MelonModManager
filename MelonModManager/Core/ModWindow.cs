@@ -8,8 +8,7 @@ using System.Threading.Tasks;
 
 using UnityEngine;
 
-namespace MelonModManager.Core
-{
+namespace MelonModManager.Core {
     public class ModWindow : MonoBehaviour {
         private static ModWindow instance;
 
@@ -35,23 +34,35 @@ namespace MelonModManager.Core
         /// </summary>
         private MelonMod SelectedMod;
 
+        private void OnDestroy() {
+            var windowObject = new GameObject("ModManager_Window");
+            windowObject.AddComponent<ModWindow>();
+        }
+
         private void Awake() {
-            if (instance) {
+            MelonLogger.Msg("Awake");
+            if (instance != null) {
+                MelonLogger.Msg("Mod window doubled, destroying");
                 Destroy(gameObject);
                 return;
             }
 
             instance = this;
             DontDestroyOnLoad(gameObject);
+            MelonLogger.Msg("Mod window initalized");
 
             // Set window size
             WindowRect.width = (float) (Screen.width / 1.4);
             WindowRect.height = (float) (Screen.height / 1.4);
             WindowRect.x = Screen.width / 2 - WindowRect.width / 2;
-            WindowRect.y = Screen.height / 2 - WindowRect.height / 2;  
+            WindowRect.y = Screen.height / 2 - WindowRect.height / 2;
         }
 
         private void Update() {
+            // TODO: Write code to display the mod window
+        }
+
+        private void OnGUI() {
             // TODO: Write code to display the mod window
         }
     }

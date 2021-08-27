@@ -1,14 +1,10 @@
 ﻿using MelonLoader;
 using MelonModManager.Util.Attributes;
 
-namespace MelonModManager.Util
-{
-    public class MLMod: MelonMod
-    {
-        public string Description
-        {
-            get
-            {
+namespace MelonModManager.Util {
+    public class MLMod : MelonMod {
+        public string Description {
+            get {
                 var attribute =
                     Assembly.GetCustomAttributes(typeof(MelonDescriptionAttribute), false)[0] as
                         MelonDescriptionAttribute;

@@ -7,6 +7,8 @@ namespace MelonModManager {
     /// The main runner of the <see cref="MelonModManager"/> plugin.
     /// </summary>
     public class MelonModManager : MelonPlugin {
+        public static MelonModManager Instance { get; private set; }
+        
         /// <summary>
         /// The Settings instance of <see cref="MelonModManagerSettings"/>.
         /// </summary>
@@ -17,11 +19,6 @@ namespace MelonModManager {
         /// </summary>
         public ModWindow Window => ModWindow.Instance;
 
-        /// <summary>
-        /// <see cref="ModWindow"/>'s GameObject.
-        /// </summary>
-        public GameObject WindowObject { get; private set; }
-
         private bool _windowsEnabled = false;
 
         /// <summary>
@@ -31,7 +28,7 @@ namespace MelonModManager {
             get => _windowsEnabled;
             set {
                 _windowsEnabled = value;
-                WindowObject.SetActive(value);
+                ModWindow.Instance.gameObject.SetActive(value);
             }
         }
 
@@ -39,6 +36,7 @@ namespace MelonModManager {
         /// Prepare to load mod informations and setup GUI.
         /// </summary>
         public override void OnApplicationStart() {
+            Instance = this;
             // Load pre-saved preferences
             MelonModManagerSettings.Load();
         }
@@ -47,13 +45,14 @@ namespace MelonModManager {
         /// Toggle all installed mods.
         /// </summary>
         public override void OnApplicationLateStart() {
+            MelonLogger.Msg("Late start");
             // Create GameObject and append Component
-            WindowObject = new GameObject("ModManager_Window");
-            WindowObject.AddComponent<ModWindow>();
-            
+            var windowObject = new GameObject("ModManager_Window");
+            windowObject.AddComponent<ModWindow>();
+
             // Disable UI if user prefers to
             if (!Settings.OpenGUIOnStartup) {
-                WindowObject.SetActive(false);
+                windowObject.SetActive(false);
             }
         }
 

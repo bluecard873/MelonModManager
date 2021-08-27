@@ -20,6 +20,8 @@ namespace MelonModManager.Util {
         /// </summary>
         public static bool AltPressed => Input.GetKey(KeyCode.LeftAlt) || Input.GetKey(KeyCode.RightAlt);
 
+        public KeyCombo() { }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="KeyCombo"/> class.
         /// </summary>

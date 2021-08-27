@@ -15,11 +15,6 @@ namespace MelonModManager.Core {
         public Dictionary<string, bool> EnabledMods = new Dictionary<string, bool>();
 
         /// <summary>
-        /// Setting instances of loaded mods.
-        /// </summary>
-        public Dictionary<Type, ModSetting> Settings = new Dictionary<Type, ModSetting>();
-
-        /// <summary>
         /// Key Combo for opening <see cref="ModWindow"/>.
         /// </summary>
         public KeyCombo OpenGUIKeyCombo = new KeyCombo(UnityEngine.KeyCode.F10, true);
@@ -36,7 +31,7 @@ namespace MelonModManager.Core {
         /// </summary>
         public static MelonModManagerSettings Instance {
             get {
-                if (_instance == null) return _instance;
+                if (_instance != null) return _instance;
                 Load();
                 return _instance;
             }
