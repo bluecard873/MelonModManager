@@ -1,6 +1,6 @@
 # MLModManager
 UMM 짝퉁(?)
-
+PORTED FOR OTHER GAMES
 ## AssemblyInfo.cs
  - [assembly: HarmonyDontPatchAll] 추가 (필수)
 
